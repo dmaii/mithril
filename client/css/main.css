@@ -1,0 +1,112 @@
+.horizontal-center {
+  margin: 0 auto;
+}
+
+.header {
+  height: 200px;
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-text {
+}
+
+.dire {
+  color: #d00a0a;
+}
+
+.radiant {
+  color: #37b008;
+}
+
+.hero {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 45px;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.chat-row:not(:last-child) {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.icon {
+  width: 40px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.time {
+  margin-right: 20px;
+}
+
+.content {
+  padding: 20px;
+  width: 700px;
+  background-color: #dfc8ca;
+  font-size: 15px;
+}
+
+label {
+  color: #f1e5e6;
+  background-color: #d3394c;
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 1.5rem 3rem;
+  text-align: center;
+  margin-left: 120px;
+}
+
+input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.logo {
+  margin-bottom: 50px;
+}
+
+.centered {
+  height: 500px;
+  width: 500px;
+  position: fixed;
+  top: 40%;
+  left: 40%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+body {
+  font-family: Avenir, 'Helvetica Neue';
+  background-color: #f1e5e6;
+  color: #4b0f31;
+  position: relative;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  margin-right: 0.25em;
+}
