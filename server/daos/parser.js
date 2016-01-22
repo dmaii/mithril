@@ -2,7 +2,7 @@ var child_process = require('child_process')
 
 module.exports = function (filepath) {
   return new Promise(function (resolve, reject) {
-    var child = child_process.spawn('./parser', [filepath], {
+    var child = child_process.spawn('./bin/parser', [filepath], {
       stdio: [
         0,
         'pipe',
@@ -13,14 +13,14 @@ module.exports = function (filepath) {
     var output = []
 
     child.stdout.on('data', function (chunk) {
-      output.push(chunk.toString())
+      output.push(JSON.parse(chunk))
     })
 
     child.stdout.on('close', function (code, signal) {
       if (code) {
         reject(new Error(code))
       } else {
-        resolve(output)
+        resolve(output[0])
       }
     })
 
