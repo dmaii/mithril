@@ -4,13 +4,18 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "test": "lab -c -L"
+    "start": "forever -o start server/index.js",
+    "build": "docker build -t mithril .",
+    "startLocal": "docker run -P -v `pwd`:/usr/src/app -t mithril",
+    "test": "lab -c -L -v",
+    "testCi": "lab -c -L"
   },
   "dependencies": {
     "express": "4.13.3",
     "jade": "1.11.0",
-    "multer": "1.1.0"
+    "multer": "1.1.0",
+    "morgan": "1.6.1",
+    "forever": "0.15.1"
   },
   "keywords": [],
   "author": "David Mai <dmai9600@yahoo.com> (https://suisha.github.io)",

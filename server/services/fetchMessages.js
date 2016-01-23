@@ -1,5 +1,5 @@
-var parse = require('../daos/parser')
-var playerUtil = require('../lib/util/player')
+const parse = require('../daos/parser')
+const playerUtil = require('../lib/util/player')
 
 module.exports = function (filepath) {
   return new Promise(function (resolve, reject) {

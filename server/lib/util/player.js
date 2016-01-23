@@ -11,9 +11,9 @@ module.exports = {
     var underscored = unlocalized.slice(prefix.length)
 
     var tokens = underscored.split('_')
-    for (var i = tokens; i < tokens.length; i++) {
-      tokens[i] = tokens[i].substring(0, 1).toUpperCase() +
-        tokens[i].substring(1, tokens[i].length)
+    for (var i = 0; i < tokens.length; i++) {
+      tokens[i] = tokens[i].substr(0, 1).toUpperCase() +
+        tokens[i].substr(1, tokens[i].length)
     }
 
     return tokens.join(' ')
