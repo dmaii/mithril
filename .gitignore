@@ -10,3 +10,4 @@ test.*
 todos.txt
 client/bower_components
 *.log
+start

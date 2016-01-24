@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '4.2.2'
+notifications:
+  email: false
+env:
+- ELASTIC_BEANSTALK_LABEL=$TRAVIS_COMMIT
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-1
+    app: mithril
+    env: MithrilHammer-dev 
+    bucket-name: $ELASTIC_BEANSTALK_BUCKET
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    on:
+        repo: suisha/mithril
+        branch: master

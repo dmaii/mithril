@@ -1,3 +1,5 @@
+const _ = require('lodash')
+
 const parse = require('../daos/parser')
 const playerUtil = require('../lib/util/player')
 
@@ -19,13 +21,13 @@ module.exports = function (filepath) {
         var heroName = playerUtil.getHeroName(p.Hero)
 
         msg.playerDisplayName = msg.PlayerName + '(' +
-          heroName + ')'
+          _.startCase(heroName) + ')'
 
         msg.iconURL = playerUtil.getHeroIcon(heroName)
         msg.team = playerUtil.getTeam(p.Team)
       }
 
-      resolve(game.Messages)
+      resolve(game)
     })
     .catch(function (err) {
       reject(err)

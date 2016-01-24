@@ -5,10 +5,10 @@ const lab = exports.lab = Lab.script()
 const playerUtil = require('../../../server/lib/util/player')
 
 lab.experiment('getHeroName', function () {
-  lab.test('should uppercase names', function (done) {
+  lab.test('extract hero names', function (done) {
     var localized = playerUtil.getHeroName('npc_dota_hero_chaos_knight')
 
-    expect(localized).to.equal('Chaos Knight')
+    expect(localized).to.equal('chaos_knight')
 
     done()
   })

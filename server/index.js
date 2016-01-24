@@ -2,29 +2,27 @@ var express = require('express')
 var fetch = require('./services/fetchMessages')
 var multer = require('multer')
 var upload = multer({ dest: '/tmp' })
+var morgan = require('morgan')
 
-// Constants
 var PORT = 8080
 
-// App
 var app = express()
 
 app.set('view engine', 'jade')
 app.set('views', __dirname + '/../views')
 app.use(express.static(__dirname + '/../client'))
+app.use(morgan('combined'))
 
-// TODO Use jade
 app.get('/', function (req, res) {
   res.render('home')
 })
 
 app.post('/parse', upload.single('replay'), function (req, res, next) {
-  // TODO Stop hard coding this
-
   fetch(req.file.path)
-  .then(function (arr) {
+  .then(function (game) {
     res.render('parsed', {
-      messages: arr
+      messages: game.Messages,
+      matchId: game.MatchId
     })
   })
   .catch(function (err) {
@@ -34,4 +32,3 @@ app.post('/parse', upload.single('replay'), function (req, res, next) {
 
 app.listen(PORT)
 console.log('Running on http://localhost:' + PORT)
-console.log('foo')
