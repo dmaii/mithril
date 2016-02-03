@@ -3,6 +3,7 @@ var fetch = require('./services/fetchMessages')
 var multer = require('multer')
 var upload = multer({ dest: '/tmp' })
 var morgan = require('morgan')
+//var compression = require('compression')
 
 var PORT = 8080
 
