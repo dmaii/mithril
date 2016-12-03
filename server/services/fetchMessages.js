@@ -15,7 +15,7 @@ module.exports = function (filepath) {
       }
 
       for (var x = 0; x < game.Messages.length; x++) {
-        var msg = game.Messages[x]
+        var msg = game.Messages[x] || []
         var p = playerMap[msg.PlayerName]
 
         var heroName = playerUtil.getHeroName(p.Hero)
